@@ -1,0 +1,18 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: tokyo4j <hrak1529@gmail.com>
+Date: Mon, 29 Jan 2024 18:05:13 +0900
+Subject: fling: enable fling on Linux VSCode
+
+diff --git a/content/common/input/fling_controller.cc b/content/common/input/fling_controller.cc
+index ab6eb88705..40a1287b3a 100644
+--- a/content/common/input/fling_controller.cc
++++ b/content/common/input/fling_controller.cc
+@@ -166,7 +166,7 @@ void FlingController::ProcessGestureFlingStart(
+   if (gesture_event.event.SourceDevice() ==
+           blink::WebGestureDevice::kTouchpad &&
+       last_wheel_event_consumed_) {
+-    return;
++    // return;
+   }
+ 
+   if (!UpdateCurrentFlingState(gesture_event.event))
